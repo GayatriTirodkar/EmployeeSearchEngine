@@ -14,8 +14,8 @@ csv.each do |row|
   puts row
   puts "=="*10
   dept = Department.find_or_create_by(_id: row['department_id'], department_name: row['department_name'], department_id: row['department_id'])
-  Employee.create([{name: row['name'], age: row['age'], gender: row['gender'], salary: row['salary'], department: dept}])
-  Section.create([{section_name: row['section_name'], department: dept}])
+  sec = Section.create([{_id: row['section_id'], section_name: row['section_name'], section_id: row['section_id'], department: dept}])
+  Employee.create([{name: row['name'], age: row['age'], gender: row['gender'], salary: row['salary'], section_id: row['section_id'], department_id: row['department_id']}])
 end
 
 puts "Records successfully inserted for Department: #{Department.count}, Section: #{Section.count} and Employee: #{Employee.count}"

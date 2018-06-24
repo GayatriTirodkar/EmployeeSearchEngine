@@ -6,7 +6,7 @@ class Department
   field :department_id, type: String
   field :department_name, type: String
 
-  index({department_name: 1, section_name: 1}, {unique: true})
+  index({department_name: 1}, {unique: true})
   index({department_id: 1})
 
   validates :department_name, presence: true, uniqueness: true

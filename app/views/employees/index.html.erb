@@ -11,7 +11,8 @@
       <th>Age</th>
       <th>Gender</th>
       <th>Salary</th>
-      <th>Department ID</th>
+      <th>Department id</th>
+      <th>Section id</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -24,6 +25,7 @@
         <td><%= employee.gender %></td>
         <td><%= employee.salary %></td>
         <td><%= employee.department_id %></td>
+        <td><%= employee.section_id %></td>
         <td><%= link_to 'Show', employee %></td>
         <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
         <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
