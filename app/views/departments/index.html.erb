@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Departments</h1>
-
+<h3>Insert valid name of Department to get the list of Employees belonging to that particular Department</h3>
 <%= form_tag(departments_path, :method => "get", id: "search-form") do %>
     <%= text_field_tag :search, params[:search], placeholder: "Search" %>
     <%= submit_tag "Search", :name => nil %>
