@@ -1,0 +1,6 @@
+employee_id,name,age,gender,salary,department_id,department_name
+1,Jasmine,25,Female,600000,1,IT
+2,Rose,22,Female,500000,2,HR
+3,Jack,29,Male,1250000,1,IT
+4,Aladdin,26,Male,700000,3,SALES
+5,Dastan,20,Male,300000,4,MARKETING

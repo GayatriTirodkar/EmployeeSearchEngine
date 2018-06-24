@@ -1,0 +1,72 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Departments</h1>
+
+<%= form_tag(departments_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
+
+<% if @employees.blank? %>
+  <h4>There are no Employees containing the term <%= params[:search] %>.</h4>
+<% else %>
+  <br>
+  <h2>Employee Table Details</h2>
+  <br>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Salary</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @employees.each do |employee| %>
+      <tr>
+        <td><%= employee.name %></td>
+        <td><%= employee.age %></td>
+        <td><%= employee.gender %></td>
+        <td><%= employee.salary %></td>
+      </tr>
+    <% end %>
+   </tbody>
+  </table>
+<% end %>
+
+
+<% if (not @departments.blank?) %>
+  <br>
+  <h2>Department Table Details</h2>
+  <br>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>ID</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @departments.each do |department| %>
+        <tr>
+          <td><%= department.department_name %></td>
+          <td><%= department.department_id %></td>
+          <td><%= link_to 'Show', department %></td>
+          <td><%= link_to 'Edit', edit_department_path(department) %></td>
+          <td><%= link_to 'Destroy', department, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+<% end %>
+
+<%= link_to 'New Department', new_department_path %>
