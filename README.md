@@ -1,24 +1,19 @@
-# README
+#Readme
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The Application retrives Employee data based on the department to which the Employee belongs to.
+Employee belongs to only one Department but Department can have multiple Employees
 
-Things you may want to cover:
 
-* Ruby version
+The app uses Ruby 2.4.1 and Rails 5.2.0
 
-* System dependencies
+Initial steps:
 
-* Configuration
+    Clone this repository
+    bundle install --without production
+    rake db:seed #to populate database with some predefined data
 
-* Database creation
+To get this application running follow the below steps:
 
-* Database initialization
+    Execute rails server
+    Open the browser and type 'http://localhost:3000/'
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

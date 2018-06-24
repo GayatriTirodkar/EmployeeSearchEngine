@@ -1,13 +1,13 @@
 class Department
   include Mongoid::Document
- 
+  include Mongoid::Tree
+
   field :_id, type: String, default: ->{ department_id }
   field :department_id, type: String
   field :department_name, type: String
 
   index({department_name: 1})
   index({department_id: 1})
-  
 
   validates :department_name, presence: true, uniqueness: true
 
