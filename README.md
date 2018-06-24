@@ -16,4 +16,6 @@ To get this application running follow the below steps:
 
     Execute rails server
     Open the browser and type 'http://localhost:3000/'
+    
+The fully functional app is also deployed on https://organizationsearchapp.herokuapp.com/
 
