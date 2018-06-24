@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Departments</h1>
-<h3>Insert valid name of Department to get the list of Employees belonging to that particular Department</h3>
+<h3>Insert valid name of Department or Employee name to retrieve the Employee Details</h3>
 <%= form_tag(departments_path, :method => "get", id: "search-form") do %>
     <%= text_field_tag :search, params[:search], placeholder: "Search" %>
     <%= submit_tag "Search", :name => nil %>
@@ -37,7 +37,6 @@
    </tbody>
   </table>
 <% end %>
-
 
 <% if (not @departments.blank?) %>
   <br>
@@ -90,13 +89,9 @@
         <tr>
           <td><%= section.section_name %></td>
           <td><%= section.department_id %></td>
-          <td><%= link_to 'Show', section %></td>
-          <td><%= link_to 'Edit', edit_section_path(section) %></td>
-          <td><%= link_to 'Destroy', section, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 <% end %>
 
-<%= link_to 'New Section', new_section_path %>

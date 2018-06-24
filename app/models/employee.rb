@@ -18,7 +18,7 @@ class Employee
   belongs_to :department, inverse_of: :employees
   validates :department, presence: true
 
-  def self.search term
-    puts Employee.where(department_id: term).all
+  def self.search_by_employee(term)
+    Employee.where(name: term.to_s.capitalize).all
   end
 end

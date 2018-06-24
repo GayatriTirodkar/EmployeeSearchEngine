@@ -8,12 +8,15 @@ class DepartmentsController < ApplicationController
     #@departments = Department.all
     #@employees = Employee.all
     if Department.pluck(:department_name).uniq.include? params[:search].to_s.upcase
-      @employees = Department.search_by_name(params[:search])
+      @employees = Department.search_by_name(params[:search].to_s.upcase)
     elsif Section.pluck(:section_name).uniq.include? params[:search]
       @employees = Section.search_by_section(params[:search])
+    elsif Employee.pluck(:name).uniq.include? params[:search].to_s.capitalize
+      @employees = Employee.search_by_employee(params[:search].to_s.capitalize)
     else
       @departments = Department.all
       @sections = Section.all
+      @employees = Employee.all
     end
   end
 

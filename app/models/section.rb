@@ -12,9 +12,7 @@ class Section
   belongs_to :department, inverse_of: :employees
 
   def self.search_by_section(term)
-      puts "yes here"
-      puts "=="*20
-      depts = Section.where(section_name: term).only(:department_id).map(&:department_id)
+      depts = Section.where(section_name: term.to_s.upcase).only(:department_id).map(&:department_id)
       Employee.where(:department_id.in => depts)
   end
 
