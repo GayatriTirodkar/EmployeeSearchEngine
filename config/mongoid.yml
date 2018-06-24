@@ -145,6 +145,7 @@ development:
     # Application name that is printed to the mongodb logs upon establishing a
     # connection in server versions >= 3.4. Note that the name cannot exceed 128 bytes.
     # app_name: MyApplicationName
+
 test:
   clients:
     default:
@@ -154,4 +155,8 @@ test:
       options:
         read:
           mode: :primary
-        max_pool_size: 1
+          max_pool_size: 1
+production:
+    clients:
+        default:
+uri: <%= ENV['PROD_MONGODB'] %>
