@@ -1,6 +1,11 @@
-employee_id,name,age,gender,salary,department_id,department_name
-1,Jasmine,25,Female,600000,1,IT
-2,Rose,22,Female,500000,2,HR
-3,Jack,29,Male,1250000,1,IT
-4,Aladdin,26,Male,700000,3,SALES
-5,Dastan,20,Male,300000,4,MARKETING
+employee_id,name,age,gender,salary,department_id,department_name,section_name
+1,Jasmine,25,Female,600000,1,IT,Product Team
+2,Rose,22,Female,500000,2,HR,Manager
+3,Jack,29,Male,1250000,1,IT,Data 
+4,Aladdin,26,Male,700000,3,SALES,Report
+5,Dastan,20,Male,300000,4,MARKETING,Strategy
+6,Joe,23,Female,450000,1,IT,Product Team
+7,John,34,Male,430000,5,FINANCE,Account
+8,Daisey,25,Female,560000,1,IT,Devops
+9,Dylan,36,Male,6700000,5,FINANCE,Account
+10,Katherine,33,Female,6500000,5,FINANCE,Account

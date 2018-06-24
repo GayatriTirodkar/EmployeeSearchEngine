@@ -7,10 +7,13 @@ class DepartmentsController < ApplicationController
     
     #@departments = Department.all
     #@employees = Employee.all
-    if params[:search]
+    if Department.pluck(:department_name).uniq.include? params[:search].to_s.upcase
       @employees = Department.search_by_name(params[:search])
+    elsif Section.pluck(:section_name).uniq.include? params[:search]
+      @employees = Section.search_by_section(params[:search])
     else
       @departments = Department.all
+      @sections = Section.all
     end
   end
 
@@ -76,6 +79,6 @@ class DepartmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def department_params
-      params.require(:department).permit(:department_name, :department_id)
+      params.require(:department).permit(:department_id, :department_name)
    end
 end
