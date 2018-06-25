@@ -22,3 +22,5 @@ Application URLs:
     The fully functional app is hosted on https://63216669.ngrok.io
     To add, modify, delete, view list of employees visit https://63216669.ngrok.io/employees
     To add, modify, delete, view list of section visit https://63216669.ngrok.io/sections
+
+    Please note: Enter ids for the fields labelled as Department/Section
