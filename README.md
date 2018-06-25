@@ -19,6 +19,6 @@ To get this application running follow the below steps:
 
 Application URLs:
 
-    The fully functional app is hosted on https://63216669.ngrok.io.
+    The fully functional app is hosted on https://63216669.ngrok.io
     To add, modify, delete, view list of employees visit https://63216669.ngrok.io/employees
     To add, modify, delete, view list of section visit https://63216669.ngrok.io/sections
