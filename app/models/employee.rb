@@ -20,7 +20,4 @@ class Employee
   belongs_to :section, inverse_of: :employees
   validates :department, :section, presence: true
 
-  def self.search_by_employee(term)
-    Employee.where(name: term.to_s.capitalize).all
-  end
 end

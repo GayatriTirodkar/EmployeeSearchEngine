@@ -14,11 +14,11 @@ class Department
 
   has_many :employees, inverse_of: :department, dependent: :destroy
   has_many :sections, inverse_of: :department, dependent: :destroy
-  
+
   validates_associated :employees, :sections
 
-  def self.search_by_name(term)
-      depts = Department.where(department_name: term).only(:_id).map(&:_id)
-      Employee.where(:department_id.in => depts)
+  def self.search_by_name(term, dept)
+      depts = Department.where(department_id: dept["department_id"]).only(:_id).map(&:_id)
+      Employee.where(:department_id.in => depts, name: term.to_s.capitalize)
   end
 end

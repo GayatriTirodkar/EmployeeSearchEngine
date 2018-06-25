@@ -4,15 +4,8 @@ class DepartmentsController < ApplicationController
   # GET /departments
   # GET /departments.json
   def index
-    
-    #@departments = Department.all
-    #@employees = Employee.all
-    if Department.pluck(:department_name).uniq.include? params[:search].to_s.upcase
-      @employees = Department.search_by_name(params[:search].to_s.upcase)
-    elsif Section.pluck(:section_name).uniq.include? params[:search]
-      @employees = Section.search_by_section(params[:search])
-    elsif Employee.pluck(:name).uniq.include? params[:search].to_s.capitalize
-      @employees = Employee.search_by_employee(params[:search].to_s.capitalize)
+    if params[:search] && params[:department]
+      @employees = Department.search_by_name(params[:search], params[:department])
     else
       @departments = Department.all
       @sections = Section.all
