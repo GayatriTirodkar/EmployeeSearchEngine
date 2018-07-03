@@ -19,8 +19,8 @@ To get this application running follow the below steps:
 
 Application URLs:
 
-    The fully functional app is hosted on https://8c9b08c0.ngrok.io
-    To add, modify, delete, view list of employees visit https://8c9b08c0.ngrok.io/employees
-    To add, modify, delete, view list of section visit https://8c9b08c0.ngrok.io/sections
+    The fully functional app is hosted on http://localhost:3000/
+    To add, modify, delete, view list of employees visit http://localhost:3000/employees
+    To add, modify, delete, view list of section visit http://localhost:3000/sections
 
     Please note: Enter ids for the fields labelled as Department/Section
